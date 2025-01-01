@@ -169,6 +169,8 @@ addToPath ~/.local/lib/node
 
 addToPath ~/.local/lib/nvim/bin
 
+addToPath ~/.local/lib/go/bin
+
 addToPathFront ~/.local/share/uv/python/cpython-3.13.0-linux-x86_64-gnu/bin
 
 alias mymy='sudo systemctl start mysql.service'
