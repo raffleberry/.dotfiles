@@ -1,6 +1,7 @@
--- global
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+
+require("config.lazy")
 
 vim.keymap.set('n', '<C-a>', 'ggVG', {
     noremap = true,
@@ -49,7 +50,7 @@ vim.keymap.set("n", "<leader>Y", "\"+Y", { desc = 'copy to clipboard' })
 
 --
 
-vim.opt.statusline = " %f %= %y | %l:%c | %{&fileencoding} | %p%%  "
+vim.opt.statusline = " %f %= %y | %{&fileencoding} | %c:[%l/%L] "
 
 function copy_file_directory()
   local dir_path = vim.fn.expand("%:p:h") 
