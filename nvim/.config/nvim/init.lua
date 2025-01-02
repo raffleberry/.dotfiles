@@ -49,8 +49,20 @@ vim.keymap.set("n", "<leader>y", "\"+Y", { desc = 'copy to clipboard' })
 vim.keymap.set("n", "<leader>Y", "\"+Y", { desc = 'copy to clipboard' })
 
 --
+function _G.lsp_status()
+  local clients = vim.lsp.get_active_clients({ bufnr = vim.api.nvim_get_current_buf() })
+  if next(clients) == nil then
+    return "No LSP"
+  else
+    local active_lsps = {}
+    for _, client in pairs(clients) do
+      table.insert(active_lsps, client.name)
+    end
+    return "LSP: " .. table.concat(active_lsps, ", ")
+  end
+end
 
-vim.opt.statusline = " %f %= %y | %{&fileencoding} | %c:[%l/%L] "
+vim.opt.statusline = " %f %= %y %{v:lua.lsp_status()} | %{&fileencoding} | %c:[%l/%L] "
 
 function copy_file_directory()
   local dir_path = vim.fn.expand("%:p:h") 
@@ -66,6 +78,6 @@ end
 vim.keymap.set("n", "<leader>cd", ":lua copy_file_directory()<CR>", { noremap = true, silent = true })
 
 -- theme
-vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+-- vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
 
 
