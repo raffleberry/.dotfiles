@@ -131,6 +131,12 @@ kdelock() {
   qdbus org.kde.plasmashell /PlasmaShell evaluateScript 'lockCorona(!locked)'
 }
 
+setup_tar() {
+    mkdir -p ~/.local/lib/
+    tar -xvf "$1" -c ~/.local/lib/
+}
+
+
 cpu() {
   if [ -z "$1" ]; then
     cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
@@ -201,7 +207,7 @@ set_gnome() {
 }
 
 # ripgrep->fzf->vim [QUERY]
-rfv() (
+fzg() (
   RELOAD='reload:rg --column --color=always --smart-case {q} || :'
   OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
             nvim {1} +{2}     # No selection. Open the current line in Vim.
