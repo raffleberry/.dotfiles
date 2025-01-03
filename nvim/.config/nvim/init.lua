@@ -78,6 +78,7 @@ end
 vim.keymap.set("n", "<leader>cd", ":lua copy_file_directory()<CR>", { noremap = true, silent = true })
 
 -- theme
+-- for transparent windows
 -- vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
 
 
