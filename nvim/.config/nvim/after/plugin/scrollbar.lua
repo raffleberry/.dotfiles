@@ -1,0 +1,3 @@
+require("scrollbar").setup({})
+
+
