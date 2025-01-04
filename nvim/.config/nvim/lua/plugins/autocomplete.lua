@@ -12,6 +12,9 @@ return {
     {
         "hrsh7th/cmp-vsnip"
     },
+    {
+        "hrsh7th/cmp-nvim-lsp"
+    },
     
     -- snippets
     {
