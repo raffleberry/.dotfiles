@@ -171,35 +171,25 @@ sourceFile() {
   fi
 }
 
-addToPath ~/.local/lib/node
+addToPath ~/Apps/bin
 
-addToPath ~/.local/lib/nvim/bin
+addToPath ~/Apps/node
 
-addToPath ~/.local/lib/go/bin
+addToPath ~/Apps/nvim/bin
+
+addToPath ~/Apps/go/bin
 
 addToPathFront ~/.local/share/uv/python/cpython-3.13.0-linux-x86_64-gnu/bin
-
-addToPathFront /home/linuxbrew/.linuxbrew/bin
-
-if type brew &>/dev/null
-then
-  HOMEBREW_PREFIX="$(brew --prefix)"
-  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
-  then
-    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-  else
-    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
-    do
-      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
-    done
-  fi
-fi
-
 
 alias mymy='sudo systemctl start mysql.service'
 alias pgrep='pgrep -af'
 
-eval "$(fzf --bash)"
+completion_dir="$HOME/Apps/completions/bash"
+for completion_file in "$completion_dir"/*; do
+    if [ -f "$completion_file" ]; then
+        source "$completion_file"
+    fi
+done
 
 reso() {
   ml=$(cvt $1 $2 | grep -i modeline | sed 's/Modeline //g')
