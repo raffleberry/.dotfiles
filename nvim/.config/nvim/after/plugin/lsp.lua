@@ -1,5 +1,7 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+vim.opt.signcolumn = 'yes'
+
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
@@ -18,7 +20,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-require('lspconfig')['ruff'].setup{}
-require('lspconfig')['clangd'].setup{}
+-- uv tool install ruff
+require'lspconfig'.ruff.setup{}
+-- https://github.com/clangd/clangd/releases/latest
+require'lspconfig'.clangd.setup{}
+-- npm i -g pyright
+require'lspconfig'.pyright.setup{}
+-- npm i -g vscode-langservers-extracted
 require'lspconfig'.jsonls.setup{}
+-- npm i -g bash-language-server
+require'lspconfig'.bashls.setup{}
+
 
