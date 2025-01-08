@@ -1,0 +1,63 @@
+{
+  "layer": "top", 
+  "position": "top",
+  "height": 36,
+  "modules-left": ["sway/workspaces", "sway/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["memory", "battery", "pulseaudio", "network", "tray"],
+
+  "window": {
+    "format": "{title}",
+    "max-length": 100
+  },
+
+  "clock": {
+    "format": "{:%a, %b %d %H:%M}"
+  },
+
+  "memory": {
+    "format": " {used:.1f}/{total:.1f}"
+  },
+
+  "battery": {
+      "format": "{icon} {capacity}% ",
+      "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁿", "󰁿", "󰂀", "󰂁", "󰂂", "󱟢"]
+  },
+
+  "network": {
+      "format-wifi": "  ({signalStrength}%)",
+      "format-ethernet": " {iframe}",
+      "format-disconnected": "󰀝",
+      "on-click": "gnome-control-center wifi"
+  },
+
+
+
+
+  "pulseaudio": {
+      "format": "{icon} {volume}% ",
+      "format-bluetooth": "{icon} {volume}% ", 
+      "format-muted": "ﱝ", 
+      "format-icons": {
+          "alsa_output.pci-0000_00_1f.3.analog-stereo": "", 
+          "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "ﱝ", 
+          "headphones": "", 
+          "handsfree": "", 
+          "headset": "", 
+          "phone": "", 
+          "phone-muted": "甆", 
+          "portable": "", 
+          "car": "", 
+          "default": ["", ""] 
+      },
+      "scroll-step": 1,
+      "on-click": "gnome-control-center sound"
+  },
+
+
+
+  "tray": {
+      "icon-size": 20
+  }
+}
+
