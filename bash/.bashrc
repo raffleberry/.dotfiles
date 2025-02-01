@@ -179,7 +179,9 @@ addToPath ~/Apps/nvim/bin
 
 addToPath ~/Apps/go/bin
 
-addToPathFront ~/.local/share/uv/python/cpython-3.13.0-linux-x86_64-gnu/bin
+addToPathFront ~/.local/share/uv/python/cpython-3.13.1-linux-x86_64-gnu/bin
+
+addToPath ~/.local/share/go/bin
 
 alias mymy='sudo systemctl start mysql.service'
 alias pgrep='pgrep -af'
