@@ -179,7 +179,7 @@ addToPath ~/Apps/nvim/bin
 
 addToPath ~/Apps/go/bin
 
-addToPathFront ~/.local/share/uv/python/cpython-3.13.1-linux-x86_64-gnu/bin
+addToPathFront ~/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/bin
 
 addToPath ~/.local/share/go/bin
 
