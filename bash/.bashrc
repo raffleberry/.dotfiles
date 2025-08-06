@@ -183,6 +183,18 @@ addToPathFront ~/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/bin
 
 addToPath ~/.local/share/go/bin
 
+addToPath ~/Apps/yams
+
+addToPath ~/.local/bin
+
+addToPath ~/Apps/flutter/bin
+
+ANDROID_HOME=$HOME/Apps/android-sdk
+
+addToPath $ANDROID_HOME/tools
+addToPath $ANDROID_HOME/tools/bin
+addToPath $ANDROID_HOME/platform-tools
+
 alias mymy='sudo systemctl start mysql.service'
 alias pgrep='pgrep -af'
 
