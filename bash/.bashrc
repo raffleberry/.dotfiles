@@ -205,6 +205,16 @@ for completion_file in "$completion_dir"/*; do
     fi
 done
 
+toggletheme() {
+  current=$(plasma-apply-colorscheme -l | grep 'current' | cut -d' ' -f3)
+
+  if [ "$current" = "BreezeDark" ]; then
+      plasma-apply-colorscheme BreezeClassic
+  else
+      plasma-apply-colorscheme BreezeDark
+  fi
+}
+
 reso() {
   ml=$(cvt $1 $2 | grep -i modeline | sed 's/Modeline //g')
   m=$(echo $ml | cut -d' ' -f1)
