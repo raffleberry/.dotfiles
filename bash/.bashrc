@@ -128,7 +128,7 @@ fi
 bind 'set completion-ignore-case on'
 
 kdelock() {
-  qdbus org.kde.plasmashell /PlasmaShell evaluateScript 'lockCorona(!locked)'
+  qdbus6 org.kde.plasmashell /PlasmaShell evaluateScript 'lockCorona(!locked)'
 }
 
 setup_tar() {
@@ -175,15 +175,9 @@ addToPath ~/Apps/bin
 
 addToPath ~/Apps/node/bin
 
-addToPath ~/Apps/nvim/bin
-
 addToPath ~/Apps/go/bin
 
-addToPathFront ~/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/bin
-
 addToPath ~/.local/share/go/bin
-
-addToPath ~/Apps/yams
 
 addToPath ~/.local/bin
 
@@ -195,7 +189,6 @@ addToPath $ANDROID_HOME/tools
 addToPath $ANDROID_HOME/tools/bin
 addToPath $ANDROID_HOME/platform-tools
 
-alias mymy='sudo systemctl start mysql.service'
 alias pgrep='pgrep -af'
 
 completion_dir="$HOME/Apps/completions/bash"
@@ -214,48 +207,6 @@ toggletheme() {
       plasma-apply-colorscheme BreezeDark
   fi
 }
-
-reso() {
-  ml=$(cvt $1 $2 | grep -i modeline | sed 's/Modeline //g')
-  m=$(echo $ml | cut -d' ' -f1)
-
-  sudo xrandr --newmode $ml
-
-  sudo xrandr --addmode eDP $m
-
-  echo "Put this in ~/.xprofile"
-  echo "xrandr --output eDP --set \"scaling mode\" \"Full aspect\""
-  echo "xrandr --newmode $ml"
-  echo "xrandr --addmode eDP $m"
-
-}
-
-
-set_gnome() {
-    gsettings set org.gnome.shell.extensions.dash-to-dock isolate-workspaces true
-    gsettings set org.gnome.shell.window-switcher app-icon-mode 'app-icon-only'
-    gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action 'cycle-windows'
-    
-}
-
-# ripgrep->fzf->vim [QUERY]
-fzg() (
-  RELOAD='reload:rg --column --color=always --smart-case {q} || :'
-  OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
-            nvim {1} +{2}     # No selection. Open the current line in Vim.
-          else
-            nvim +cw -q {+f}  # Build quickfix list for the selected items.
-          fi'
-  fzf --disabled --ansi --multi \
-      --bind "start:$RELOAD" --bind "change:$RELOAD" \
-      --bind "enter:become:$OPENER" \
-      --bind "ctrl-o:execute:$OPENER" \
-      --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview' \
-      --delimiter : \
-      --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
-      --preview-window '~4,+{2}+4/3,<80(up)' \
-      --query "$*"
-)
 
 
 
