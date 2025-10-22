@@ -191,6 +191,10 @@ addToPath $ANDROID_HOME/platform-tools
 
 alias pgrep='pgrep -af'
 
+eval "$(fzf --bash)"
+
+export GTK_USE_PORTAL=1
+
 completion_dir="$HOME/Apps/completions/bash"
 for completion_file in "$completion_dir"/*; do
     if [ -f "$completion_file" ]; then
