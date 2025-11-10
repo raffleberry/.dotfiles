@@ -128,7 +128,7 @@ fi
 bind 'set completion-ignore-case on'
 
 kdelock() {
-  qdbus6 org.kde.plasmashell /PlasmaShell evaluateScript 'lockCorona(!locked)'
+  qdbus org.kde.plasmashell /PlasmaShell evaluateScript 'lockCorona(!locked)'
 }
 
 setup_tar() {
@@ -179,21 +179,18 @@ addToPath ~/Apps/go/bin
 
 addToPath ~/.local/share/go/bin
 
-addToPath ~/.local/bin
+addToPathFront ~/.local/bin
 
-addToPath ~/Apps/flutter/bin
-
-ANDROID_HOME=$HOME/Apps/android-sdk
-
-addToPath $ANDROID_HOME/tools
-addToPath $ANDROID_HOME/tools/bin
-addToPath $ANDROID_HOME/platform-tools
+# ANDROID_HOME=$HOME/Apps/android-sdk
+#
+# addToPath $ANDROID_HOME/tools
+# addToPath $ANDROID_HOME/tools/bin
+# addToPath $ANDROID_HOME/platform-tools
 
 alias pgrep='pgrep -af'
+alias venv='source .venv/bin/activate'
 
 eval "$(fzf --bash)"
-
-export GTK_USE_PORTAL=1
 
 completion_dir="$HOME/Apps/completions/bash"
 for completion_file in "$completion_dir"/*; do
@@ -213,6 +210,6 @@ toggletheme() {
 }
 
 
-
-
-
+new() {
+  nohup $@ > ~/.cache/$1.log 2>&1 &
+}
