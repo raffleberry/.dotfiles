@@ -16,7 +16,7 @@ EOF
 
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt update
+sudo apt install -y qbittorrent ffmpeg kubuntu-restricted-* vlc  stow
 sudo apt install firefox -y
 
 
-sudo apt install -y qbittorrent ffmpeg kubuntu-restricted-* vlc  stow
