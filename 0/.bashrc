@@ -128,7 +128,7 @@ fi
 bind 'set completion-ignore-case on'
 
 kdelock() {
-  qdbus org.kde.plasmashell /PlasmaShell evaluateScript 'lockCorona(!locked)'
+  qdbus6 org.kde.plasmashell /PlasmaShell evaluateScript 'lockCorona(!locked)'
 }
 
 setup_tar() {
