@@ -192,8 +192,8 @@ alias venv='source .venv/bin/activate'
 
 eval "$(fzf --bash)"
 
-completion_dir="$HOME/Apps/completions/bash"
-for completion_file in "$completion_dir"/*; do
+completion_dir="$HOME/Apps/completions"
+for completion_file in "$completion_dir"/*.bash; do
     if [ -f "$completion_file" ]; then
         source "$completion_file"
     fi
