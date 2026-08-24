@@ -175,6 +175,8 @@ addToPath ~/Apps/bin
 
 addToPath ~/Apps/node/bin
 
+addToPath ~/Apps/nvim/bin
+
 addToPath ~/Apps/go/bin
 
 addToPath ~/.local/share/go/bin
@@ -189,8 +191,6 @@ addToPathFront ~/.local/bin
 
 alias pgrep='pgrep -af'
 alias venv='source .venv/bin/activate'
-
-eval "$(fzf --bash)"
 
 completion_dir="$HOME/Apps/completions"
 for completion_file in "$completion_dir"/*.bash; do
