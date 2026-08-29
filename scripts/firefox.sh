@@ -11,7 +11,7 @@ EOF
 
 sudo tee /etc/apt/preferences.d/mozilla > /dev/null << EOF
 Package: firefox*
-Pin: origin ppa.launchpadcontent.net/mozillateam/ppa/ubuntu
+Pin: origin ppa.launchpadcontent.net
 Pin-Priority: 1000
 EOF
 
