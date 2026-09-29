@@ -18,7 +18,7 @@ shopt -s histappend
 PROMPT_COMMAND='exit_code=$?; timestamp=$(date +%T);prompt_content="$exit_code | $timestamp"; separator=$(printf "%0.s=" $(seq ${#prompt_content})); printf "\n%s\n%s\n%s\n" "$separator" "$prompt_content" "$separator" && history -a'
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
+HISTSIZE=2000
 HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
