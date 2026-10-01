@@ -181,6 +181,8 @@ addToPath ~/Apps/go/bin
 
 addToPath ~/.local/share/go/bin
 
+addToPath ~/.opencode/bin
+
 addToPathFront ~/.local/bin
 
 # ANDROID_HOME=$HOME/Apps/android-sdk
@@ -191,6 +193,7 @@ addToPathFront ~/.local/bin
 
 alias pgrep='pgrep -af'
 alias venv='source .venv/bin/activate'
+alias gits='git status'
 
 completion_dir="$HOME/Apps/completions"
 for completion_file in "$completion_dir"/*.bash; do
@@ -213,4 +216,3 @@ toggletheme() {
 new() {
   nohup $@ > ~/.cache/$1.log 2>&1 &
 }
-
