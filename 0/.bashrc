@@ -216,3 +216,4 @@ toggletheme() {
 new() {
   nohup $@ > ~/.cache/$1.log 2>&1 &
 }
+
