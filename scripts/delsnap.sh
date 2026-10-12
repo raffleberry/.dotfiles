@@ -11,7 +11,7 @@ sudo rm -rf /var/lib/snapd
 
 sudo apt update
 
-sudo add-apt-repository ppa:mozillateam/ppa
+sudo add-apt-repository -y ppa:mozillateam/ppa
 
 echo '
 Package: firefox*
