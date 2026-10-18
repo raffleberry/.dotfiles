@@ -23,10 +23,9 @@ Pin: release o=Ubuntu
 Pin-Priority: -1
 ' | sudo tee /etc/apt/preferences.d/mozilla-firefox
 
-sudo apt-get update
+sudo apt-get -y update
 
 sudo apt install -y firefox qbittorrent ffmpeg kubuntu-restricted-* vlc
 
-sudo apt purge -y elisa haruna kdeconnect kmahjongg kmines kpat ksudoku
 sudo apt autoremove -y
 sudo apt upgrade -y

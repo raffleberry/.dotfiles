@@ -32,11 +32,12 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-panel --disable-wm-check
+
+exec --no-startup-id xfce4-power-manager
 
 exec_always --no-startup-id picom
 
-# let plasma handle this 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/scripts/volume.sh incr 10 && $refresh_i3status
@@ -58,7 +59,7 @@ bindsym $mod+q kill
 # krunner too slow :((
 # bindsym $mod+d exec --no-startup-id krunner
 # A more modern dmenu replacement is rofi:
-bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+bindcode $mod+40 exec xfce4-popup-whiskermenu
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -88,7 +89,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+h split b
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -186,10 +187,6 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    position top
-    status_command i3status
-}
 
 # common
 for_window [class="Arandr"] floating enable
@@ -197,11 +194,13 @@ for_window [class="Arandr"] floating enable
 # gnome compatibility improvements
 for_window [class="Software-properties-gtk"] floating enable
 for_window [window_role="gnome-calculator"] floating enable
+for_window [class="Xfce4-panel"] floating enable
+for_window [class="KeePassXC"] floating enable
+for_window [class="pavucontrol"] floating enable
 
 # Plasma compatibility improvements
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper
 
 focus_follows_mouse no
