@@ -183,6 +183,8 @@ addToPath ~/.local/share/go/bin
 
 addToPath ~/.opencode/bin
 
+addToPath ~/.cargo/bin
+
 addToPathFront ~/.local/bin
 
 # ANDROID_HOME=$HOME/Apps/android-sdk
