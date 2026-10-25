@@ -25,7 +25,7 @@ Pin-Priority: -1
 
 sudo apt-get -y update
 
-sudo apt install -y firefox qbittorrent ffmpeg kubuntu-restricted-* vlc
+sudo apt install -y firefox qbittorrent ffmpeg kubuntu-restricted-addons vlc
 
 sudo apt purge -y elisa haruna kdeconnect kmahjongg kmines kpat ksudoku
 sudo apt autoremove -y
