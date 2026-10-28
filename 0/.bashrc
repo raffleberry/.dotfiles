@@ -181,7 +181,7 @@ addToPath ~/Apps/go/bin
 
 addToPath ~/.local/share/go/bin
 
-addToPath ~/.opencode/bin
+addToPath ~/.bun/bin
 
 addToPath ~/.cargo/bin
 
