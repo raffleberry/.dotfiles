@@ -32,29 +32,29 @@ if [ $index -eq 0 ]; then
     kscreen-doctor \
         output.$internal.enable \
         output.$internal.primary \
-        output.$internal.mode.1920x1080@60 \
+        output.$internal.mode.1280x720@60 \
         output.$internal.position.0,0 \
-        output.$internal.scale.1.5 \
+        output.$internal.scale.1 \
         output.$external.disable 
 elif [ $index -eq 1 ]; then
     # external only
     kscreen-doctor \
         output.$external.enable \
         output.$external.primary \
-        output.$external.mode.1920x1080@60 \
+        output.$external.mode.1600x900@60 \
         output.$external.position.0,0 \
-        output.$external.scale.1.25 \
+        output.$external.scale.1 \
         output.$internal.disable
 elif [ $index -eq 2 ]; then
     # external primary internal secondary(left side)
     kscreen-doctor \
         output.$external.enable \
         output.$external.primary \
-        output.$external.mode.1920x1080@60 \
+        output.$external.mode.1600x900@60 \
         output.$external.position.1280,0 \
-        output.$external.scale.1.25 \
+        output.$external.scale.1 \
         output.$internal.enable \
-        output.$internal.mode.1920x1080@60 \
+        output.$internal.mode.1280x720@60 \
         output.$internal.position.0,0 \
-        output.$internal.scale.1.5
+        output.$internal.scale.1
 fi

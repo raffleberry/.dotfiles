@@ -185,6 +185,8 @@ addToPath ~/.bun/bin
 
 addToPath ~/.cargo/bin
 
+addToPath ~/.lmstudio/bin
+
 addToPathFront ~/.local/bin
 
 # ANDROID_HOME=$HOME/Apps/android-sdk
@@ -218,4 +220,3 @@ toggletheme() {
 new() {
   nohup $@ > ~/.cache/$1.log 2>&1 &
 }
-
